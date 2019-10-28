@@ -1,6 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
+<title>Workflow</title>
 <style>
 .drop {
 	min-width: 200px;
@@ -82,8 +83,8 @@ td {
 </head>
 
 <body>
-	<button type="button" class="collapsible">Sprint #1 (Back to work): 28.10.2019 - 03.11.2019</button>
-	<div class="content">
+	<button type="button" class="collapsible active">Sprint #1 (Back to work): 28.10.2019 - 03.11.2019</button>
+	<div class="content" style="display: block;">
 		<br>
 		<button onclick="showModal(0, -1)">Create Story</button>
 

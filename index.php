@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Workflow</title>
+<title>Taskboard</title>
 <style>
 .drop {
 	min-width: 200px;
@@ -140,10 +140,23 @@ function drag(ev) {
 function drop(ev) {
 	ev.preventDefault();
 	var data = ev.dataTransfer.getData("text");
-	ev.target.appendChild(document.getElementById(data));
-	console.log("Dropped " + data + " at " + ev.target.id);
 
-	editTask(data, ev.target.id);
+	if (ev.target.id == "")
+	{
+		console.log("Error");
+	}
+	else if (ev.target.id.includes("task"))
+	{
+		ev.target.parentElement.appendChild(document.getElementById(data));
+		console.log("Dropped " + data + " at " + ev.target.parentElement.id);
+		editTask(data, ev.target.parentElement.id);
+	}
+	else
+	{
+		ev.target.appendChild(document.getElementById(data));
+		console.log("Dropped " + data + " at " + ev.target.id);
+		editTask(data, ev.target.id);
+	}
 }
 
 
